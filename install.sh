@@ -66,6 +66,6 @@ then
         (crontab -l; echo "* * * * * cd $(pwd)/pawncc; ./updateAndCompile.sh" ) | crontab -
 fi
 
-echo "alias compilar='cd $(pwd)/pawncc; ./compile.sh'" >> ~/.bashrc
+echo "alias compilar='cd $(pwd)/pawncc; ./compile.sh; cd -'" >> ~/.bashrc
 
 echo "*** Instalación completa **"
