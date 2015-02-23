@@ -17,18 +17,25 @@ read
 sudo apt-get -y install mysql-server mysql-common mysql-client
 
 echo ""
-echo "A continuación se instalará phpMyAdmin para administrar la base de datos, cuando se le solicite un password ingrese el mismo utilizado en el paso anterior"
-echo "*** Presione enter para continuar ***"
-read
-
-sudo apt-get -y install phpmyadmin
-
-echo ""
-echo "¿Deseainstalar la base de datos de prueba? [s/N]?"
+echo "¿Desea instalar phpMyAdmin? [s/N]?"
 read ANSWER
 
-	if test "$(echo $ANSWER | tr '[:upper:]' '[:lower:]')" = "s"
-	then
+if test "$(echo $ANSWER | tr '[:upper:]' '[:lower:]')" = "s"
+then
+	echo ""
+	echo "A continuación se instalará phpMyAdmin para administrar la base de datos, cuando se le solicite un password ingrese el mismo utilizado en el paso anterior"
+	echo "*** Presione enter para continuar ***"
+	read
+
+	sudo apt-get -y install phpmyadmin
+fi
+
+echo ""
+echo "¿Desea instalar la base de datos de prueba? [s/N]?"
+read ANSWER
+
+if test "$(echo $ANSWER | tr '[:upper:]' '[:lower:]')" = "s"
+then
 
 	echo ""
 	echo "A continuación se instalará la base de datos del juego, por favor, cuando le sea solicitado ingrese la clave de la base de datos."
